@@ -1,4 +1,5 @@
-  public static void main(String[] args) {
+ public class Main {
+    public static void main(String[] args) {
     // Crear equipos y personajes de ejemplo
      Equipo equipo1 = new Equipo("Equipo Rojo");
      equipo1.agregarPersonaje(new Guerrero("Guerrero Rojo", 100, 20, 10));
@@ -10,3 +11,4 @@
      //COMPLETAR : Escribir código para simular las rondas
 
     
+}
