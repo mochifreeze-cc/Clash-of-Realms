@@ -1,28 +1,48 @@
 package ABSTRACT;
-public class Personaje {
+public abstract class Personaje {
     private String nombre;
     protected int vida;
     protected int ataque;
     protected int defensa;
 
-    public Personaje(String n, int v, int a, int d) {
-        this.nombre = n;
-        this.vida = v;
-        this.ataque = a;
-        this.defensa = d;
+    public Personaje(String nombre, int vida, int ataque, int defensa) {
+        this.nombre = nombre;
+        this.vida = vida;
+        this.ataque = ataque;
+        this.defensa = defensa;
     }
-  public void realizarAtaque(Personaje contrario) {
+
+    public String getNombre(){
+        return nombre;
+    }
+
+    public void realizarAtaque(Personaje contrario) {
         // Activar la estrategia antes de atacar
-        usarEstrategia();
+        this.usarEstrategia();
         // Enviar el ataque directamente al contrario
         contrario.recibirAtaque(this.ataque);  // pasar el valor de ataque 
     }
-    //escribir métodos solicitados en la hoja de desarrollo
+
+    public boolean estaVivo(){
+        return vida>0;
+    }
+
     public void recibirAtaque(int dano) {
-           //implementar
+        int danoReal = dano-defensa;
+        if (dano<defensa){
+            danoReal = 0;
+        }
+
+        vida -= danoReal;
+        if (vida<=0){
+            vida = 0;
+        }
+
+        System.out.println(nombre + " recibe " + danoReal + " de daño. Vida restante: " + vida);
+       
    }
    //denifir metodo abstracto  usarEstrategia
     public abstract void usarEstrategia();
 
-
+    
 }

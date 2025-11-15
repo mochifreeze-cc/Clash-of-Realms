@@ -1,11 +1,14 @@
+import ABSTRACT.Personaje;
+import java.util.ArrayList;
+
 public class Equipo {
     //atributos
     private String nombre;
-    private Arraylist<Personaje> personajes;
+    private ArrayList<Personaje> personajes;
     //metodos 
     public Equipo(String nombre) {
         this.nombre = nombre;
-        this.personajes = new arraylist<Personaje>();
+        this.personajes = new ArrayList<>();
     }
 
     public void agregarPersonaje(Personaje p) {
@@ -17,29 +20,44 @@ public class Equipo {
     }
 
     //getter
+    public String getNombre(){
+        return nombre;
+    }
+
     public ArrayList<Personaje> getPersonajes() {
         return personajes;
     }
     
     public void atacarOtroEquipo(Equipo e) {
     // Lógica: cada personaje de este equipo ataca a personajes del otro equipo
-    for (Personaje miPersonaje : this.personajes) {
-        for (Personaje enemigo : e.getPersonajes()) {
-            if (enemigo.estaVivo()) {
-                miPersonaje.realizarAtaque(enemigo);
-                break; // Ataca solo a uno
+        System.out.println("El equipo " + nombre + " va a empezar el ataque");
+        int i = 0;
+        for (Personaje personaje: personajes){
+            if (personaje.estaVivo()){
+                System.out.println(personaje.getNombre() + " ataca a " + e.personajes.get(i).getNombre());
+                personaje.realizarAtaque(e.personajes.get(i));
             }
+            i++;
         }
     }
-}
+
     //boolean 
     public boolean estaDerrotado() {
-        for (Personaje p : personajes) {
-            if (p.estaVivo()) {
-                return false;
+        int muertos = 0;
+
+        for (Personaje personaje:personajes){
+            if (personaje.estaVivo()){
+            }
+            else{
+                muertos++;
             }
         }
-        return true;
+        if (muertos == personajes.size()){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     
 }
