@@ -3,8 +3,8 @@ package APLICATION;
 import ABSTRACT.Personaje;
 
 public class Guerrero2 extends Personaje {
-    public Guerrero2(String guerreroRojo, int vida, int ataque, int defensa) {
-        super(guerreroRojo,vida,ataque,defensa);
+    public Guerrero2(String nombre, int vida, int ataque, int defensa) {
+        super(nombre,vida,ataque,defensa);
 
     }
 
