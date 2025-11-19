@@ -36,24 +36,14 @@ public class Equipo {
 
         ArrayList<Personaje> vivos = new ArrayList<>();
         for (Personaje p : personajes) {
-            if (p.vida > 0) {
+            if (p.getVida() > 0) {
                 vivos.add(p);
             }
         }
         return vivos;
-        //return personajes;
     }
 
-//    // Método para obtener personajes con vida > 0
-//    public ArrayList<Personaje> getPersonajesVivos() {
-//        ArrayList<Personaje> vivos = new ArrayList<>();
-//        for (Personaje p : personajes) {
-//            if (p.vida > 0) {
-//                vivos.add(p);
-//            }
-//        }
-//        return vivos;
-//    }
+
 
     public void atacarOtroEquipo(Equipo e) {
         // Lógica: cada personaje de este equipo ataca a personajes del otro equipo
