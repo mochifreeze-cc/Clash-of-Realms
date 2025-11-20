@@ -4,12 +4,17 @@ public abstract class Personaje {
     protected int vida;
     protected int ataque;
     protected int defensa;
+    protected int danoRealUltimoAtaque = 0;
 
     public Personaje(String nombre, int vida, int ataque, int defensa) {
         this.nombre = nombre;
         this.vida = vida;
         this.ataque = ataque;
         this.defensa = defensa;
+    }
+
+    public int getDanoRealUltimoAtaque() {
+        return danoRealUltimoAtaque;
     }
 
     public int getVida() {
@@ -36,6 +41,7 @@ public abstract class Personaje {
         if (dano < defensa) {
             danoReal = 0;
         }
+        this.danoRealUltimoAtaque = danoReal;
 
         vida -= danoReal;
         if (vida <= 0) {

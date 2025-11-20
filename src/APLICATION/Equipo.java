@@ -24,6 +24,9 @@ public class Equipo {
         if (p instanceof Mago) {
             ((Mago) p).setEquipo(this);
         }
+        if (p instanceof Mistico) {
+            ((Mistico) p).setEquipo(this);
+        }
     }
 
     //getter
