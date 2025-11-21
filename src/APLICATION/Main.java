@@ -1,12 +1,6 @@
-//Package APLICATION;
+package APLICATION;
 
 import ABSTRACT.Personaje;
-import APLICATION.*;
-import APLICATION.Guerrero;
-//import HERENCIA.Mago;
-//import HERENCIA.*;
-
-
 
 public class Main {
     public static void main(String[] args) {
