@@ -18,7 +18,6 @@ public class Mago extends Personaje {
 
     @Override
     public void usarEstrategia(){
-        this.ataque = this.ataque + 2;
         // Curar a un aliado aleatorio
         if (miEquipo != null) {
             ArrayList<Personaje> personajesVivos = miEquipo.getPersonajes();
