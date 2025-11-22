@@ -42,7 +42,7 @@ public class Mistico extends Personaje {
             return;
         }
 
-        // 🔥 sumar el daño real causado por los otros aliados
+        // Sumar el daño real causado por los otros aliados
         int bono = 0;
         for (Personaje p : equipo.getPersonajes()) {
             if (p != this) {
